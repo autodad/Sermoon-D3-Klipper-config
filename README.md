@@ -10,7 +10,25 @@ Klipper configuration for Creality Sermoon D3
 ## Not Working:
   Camera
   Loadcell for automatic Z-Offset
+  LCD screen
 
 ## Manual config requirements
+```yaml
   [bltouch]
-    z_offset: 2.50 +/-0.25
+    z_offset: 2.50 # +/-0.25
+```
+
+  Commit to bed mesh config in file
+
+## Things to remember before printing
+  Calibrate heating elements PID
+  
+### Extruder
+  `PID_CALIBRATE HEATER=extruder TARGET=210`
+  Where TARGET is the temperature you usually use for your filament
+### Build plate
+  `PID_CALIBRATE HEATER=heater_bed TARGET=60`
+  Where TARGET is the temperature you usually use for your bed
+### Save
+  There is no autosave so don't forget
+  `SAVE_CONFIG`
